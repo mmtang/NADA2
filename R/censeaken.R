@@ -37,9 +37,9 @@
 
 censeaken <- function(time, y, y.cen, group, LOG = FALSE, R = 4999, nmin = 4, seaplots = FALSE,printstat=TRUE)
 {
-  xname = deparse(substitute(time))
-  yname = deparse(substitute(y))
-  grpname = deparse(substitute(group))  # season column name
+  xname = deparse1(substitute(time))
+  yname = deparse1(substitute(y))
+  grpname = deparse1(substitute(group))  # season column name
 
   if (LOG == TRUE)  { yname <- paste("ln(", yname, ")", sep = "")
   nonas <- na.omit(data.frame(time, log(y), y.cen, group)) }
